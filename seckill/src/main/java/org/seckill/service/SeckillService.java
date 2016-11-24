@@ -20,6 +20,11 @@ public interface SeckillService {
     List<Seckill> getSeckillList();
 
     /**
+     *
+     * @return
+     */
+    Seckill querySeckillById(long seckillId);
+    /**
      * get seckill url
      * @param seckillId
      * @return

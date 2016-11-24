@@ -38,6 +38,10 @@ public class SeckillServiceImpl implements SeckillService{
         return seckillDao.getAll(0,4);
     }
 
+    public Seckill querySeckillById(long seckillId) {
+        return seckillDao.queryById(seckillId);
+    }
+
     public Exposer exportSeckillUrl(long seckillId) {
         Seckill seckill=seckillDao.queryById(seckillId);
         if(seckill==null){
