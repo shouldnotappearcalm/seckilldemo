@@ -27,7 +27,7 @@ public class SeckillDaoTest {
 
     @Test
     public void getAll() throws Exception {
-        List<Seckill> list=seckillDao.getAll();
+        List<Seckill> list=seckillDao.getAll(0,4);
         for(Seckill seckill:list){
             logger.info(seckill.getSeckillId()+","+seckill.getName()+","+seckill.getNumber()+","+seckill.getStartTime());
         }

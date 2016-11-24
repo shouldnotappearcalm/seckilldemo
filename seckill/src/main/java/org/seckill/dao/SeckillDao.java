@@ -15,7 +15,7 @@ public interface SeckillDao {
      * get all shops ,method default is public
      * @return
      */
-    List<Seckill> getAll();
+    List<Seckill> getAll(@Param("offset")int offset,@Param("limit")int limit);
 
     /**
      *

@@ -35,7 +35,7 @@ public class SeckillServiceImpl implements SeckillService{
     private  String salt="daewaewq'.;/e213sd.;.,,lksd;lad";
 
     public List<Seckill> getSeckillList() {
-        return seckillDao.getAll();
+        return seckillDao.getAll(0,4);
     }
 
     public Exposer exportSeckillUrl(long seckillId) {

@@ -4,7 +4,8 @@
 <mapper namespace="org.seckill.dao.SeckillDao">
     <select id="getAll" resultType="org.seckill.entity.Seckill">
         select seckill_id,name,number,end_time,start_time,create_time from seckill
-        order by create_time desc;
+        order by create_time desc
+         limit #{offset},#{limit}
     </select>
 
     <update id="reduceNumber">
