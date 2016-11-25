@@ -21,7 +21,7 @@ seckill={
     },
     handlerSeckill:function (seckillId,node) {
         node.hide().html('<button class="btn btn-primary btn-lg" id="killBtn">begin seckill</button>');
-        $.post(seckill.URL.exposer(),{},function (result) {
+        $.post(seckill.URL.exposer(seckillId),{},function (result) {
             if(result&&result['success']){
                 var exposer=result['data'];
                 if(exposer['exposed']){
@@ -33,11 +33,12 @@ seckill={
                         $(this).addClass('disabled');
                         $.post(seckillUrl,{},function (result) {
                            var killResult= result['data'];
-                            var state=result['state'];
-                            var stateInfo=result['stateInfo'];
+                            var state=killResult['state'];
+                            var stateInfo=killResult['stateInfo'];
                             node.html('<span class="label label-success">'+stateInfo+'</span>');
                         });
                     });
+                    node.show(300);
                 }
             }
         });
@@ -89,7 +90,7 @@ seckill={
             $.get(seckill.URL.now(),function (result) {
                if(result&&result['success']){
                    var nowTime=result['data'];
-
+                   seckill.countDwon(seckillId,nowTime,startTime,endTime);
                }
             });
         }
