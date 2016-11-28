@@ -32,9 +32,11 @@ public class RedisDao {
                 //not implemented the internal serialization operation
                 //get->byte[]->deserialize->Object[Seckill]
                 //采用自定义序列化
+                //using custom serialization
                 //protostuff:pojo
                 byte[] bytes=jedis.get(key.getBytes());
                 //缓冲中获取到
+                //get it from cache
                 if(bytes!=null){
                     //空对象
                     Seckill seckill=schema.newMessage();

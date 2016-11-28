@@ -32,7 +32,7 @@ public interface SeckillService {
     Exposer exportSeckillUrl(long seckillId);
 
     /**
-     *
+     * execute seckill by procedure
      * @param seckillId
      * @param userPhone
      * @param md5
@@ -41,6 +41,8 @@ public interface SeckillService {
      * @throws SeckillCloseException
      * @throws SeckillException
      */
-    SeckillExecution executeSeckill(long seckillId,long userPhone,String md5)throws RepeatKillException,SeckillCloseException,SeckillException;
+    SeckillExecution executeSeckillProcedure(long seckillId,long userPhone,String md5)throws RepeatKillException,SeckillCloseException,SeckillException;
 
+
+    public SeckillExecution executeSeckill(long seckillId, long userPhone, String md5) throws RepeatKillException, SeckillCloseException, SeckillException;
 }
