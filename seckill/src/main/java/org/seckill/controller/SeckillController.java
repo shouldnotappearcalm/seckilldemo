@@ -22,6 +22,7 @@ import java.util.List;
 
 /**
  * Created by GZR on 2016/11/24.
+ * test commit to github
  */
 @Controller
 @RequestMapping("/seckill")
